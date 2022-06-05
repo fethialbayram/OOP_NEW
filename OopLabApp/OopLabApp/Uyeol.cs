@@ -10,29 +10,41 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
 
 namespace OopLabApp
 {
     public partial class Uyeol : Form
     {
+
+
+        SqlConnection baglanti;
+        SqlCommand komut;
+        SqlDataAdapter da;
+
+
+        void kullaniciGetir()
+        {
+
+            baglanti = new SqlConnection("Data Source=FETHI-OMEN;Initial Catalog=OOP_LAB;Integrated Security=True");
+            baglanti.Open();
+            da = new SqlDataAdapter("SELECT * FROM kullanici", baglanti);
+            DataTable tablo = new DataTable();
+            da.Fill(tablo);
+            dataGridView1.DataSource = tablo;
+            baglanti.Close();
+
+        }
+
         public Uyeol()
         {
             InitializeComponent();
         }
 
-        void Yukle()
-        {
-            XmlDocument x = new XmlDocument();
-            DataSet ds = new DataSet();
-            XmlReader xmlFile;
-            xmlFile = XmlReader.Create(@"veri.xml", new XmlReaderSettings());
-            ds.ReadXml(xmlFile);    
-            dataGridView1.DataSource = ds.Tables[0];
-            xmlFile.Close(); 
-        }
+        
         private void Uyeol_Load(object sender, EventArgs e)
         {
-            Yukle();
+            kullaniciGetir();
         }
 
         private void Uyeol_FormClosing(object sender, FormClosingEventArgs e)
@@ -49,7 +61,7 @@ namespace OopLabApp
         {
             SHA256Managed SHA256 = new SHA256Managed();
 
-            byte[] sifreleme = Encoding.UTF8.GetBytes(textBox2.Text);
+            byte[] sifreleme = Encoding.UTF8.GetBytes(textBox3.Text);
 
             sifreleme = SHA256.ComputeHash(sifreleme);
 
@@ -62,52 +74,28 @@ namespace OopLabApp
 
             textBox2.Text = sb.ToString();
 
-            XDocument x = XDocument.Load(@"veri.xml");
-            x.Element("Kullanicilar").Add(
-                new XElement("User",
-                new XElement("Username", textBox1.Text),
-                new XElement("Password", textBox2.Text),
-                new XElement("Name-Surname", textBox3.Text),
-                new XElement("Phone-Number", textBox4.Text),
-                new XElement("Address", textBox5.Text),
-                new XElement("City", textBox6.Text),
-                new XElement("Country", textBox7.Text),
-                new XElement("E-mail", textBox8.Text))
-                );
-            x.Save(@"veri.xml");
-            Yukle();
+            baglanti = new SqlConnection("Data Source=FETHI-OMEN;Initial Catalog=OOP_LAB;Integrated Security=True");
+            string sorgu = "INSERT INTO kullanici(USERNAME, PASSWORD, NAME_SURNAME, PHONE, ADDRESS, CITY, COUNTRY, EMAIL) VALUES (@USERNAME,@PASSWORD,@NAME_SURNAME,@PHONE,@ADDRESS,@CITY,@COUNTRY,@EMAIL)";
+            komut = new SqlCommand(sorgu, baglanti);
+            komut.Parameters.AddWithValue("@USERNAME", textBox1.Text);
+            komut.Parameters.AddWithValue("@PASSWORD", textBox2.Text);
+            komut.Parameters.AddWithValue("@NAME_SURNAME", textBox3.Text);
+            komut.Parameters.AddWithValue("@PHONE", textBox4.Text);
+            komut.Parameters.AddWithValue("@ADDRESS", textBox5.Text);
+            komut.Parameters.AddWithValue("@CITY", textBox6.Text);
+            komut.Parameters.AddWithValue("@COUNTRY", textBox7.Text);
+            komut.Parameters.AddWithValue("@EMAIL", textBox8.Text);
+            baglanti.Open();
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+            kullaniciGetir();
+
+
         }
 
         private void dataGridView1_AutoSizeColumnsModeChanged(object sender, DataGridViewAutoSizeColumnsModeEventArgs e)
         {
 
-        }
-
-        private void Gnclbtn_Click(object sender, EventArgs e)
-        {
-            XDocument x = XDocument.Load(@"veri.xml");
-            XElement node = x.Element("Kullanicilar").Elements("User").FirstOrDefault(a => a.Element("Username").Value.Trim() == textBox1.Text);
-            if (node != null)
-            {
-                node.SetElementValue("Username", textBox1.Text);
-                node.SetElementValue("Password", textBox2.Text);
-                node.SetElementValue("Name-Surname", textBox3.Text);
-                node.SetElementValue("Phone-Number", textBox4.Text);
-                node.SetElementValue("Adress", textBox5.Text);
-                node.SetElementValue("City", textBox6.Text);
-                node.SetElementValue("Country", textBox7.Text);
-                node.SetElementValue("E-mail", textBox8.Text);
-                x.Save(@"veri.xml");
-                Yukle();
-            }
-        }
-
-        private void Silbtn_Click(object sender, EventArgs e)
-        {
-            XDocument x = XDocument.Load(@"veri.xml");
-            x.Root.Elements().Where(a => a.Element("Username").Value == textBox1.Text).Remove();
-            x.Save(@"veri.xml");
-            Yukle();
-        }
+        }        
     }
 }
