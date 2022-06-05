@@ -1,0 +1,35 @@
+[33mcommit 42bda7696554148a0fde8f9246d7ce9f7c171093[m[33m ([m[1;36mHEAD -> [m[1;32mfethi_branch[m[33m)[m
+Author: fethialbayram <fethi.grlp@gmail.com>
+Date:   Sat Mar 26 16:10:22 2022 +0300
+
+    gaameForm Form'u olusturuldu
+
+[33mcommit 12b13b96ee9f6721f69756111eb28765293f64cf[m
+Author: fethialbayram <fethi.grlp@gmail.com>
+Date:   Sat Mar 26 16:00:17 2022 +0300
+
+    adminForm'a username ve password kısmı eklendi
+
+[33mcommit d65cb1838cc7c92651d3664a7b21949b9e3a2168[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/default[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: aslan2289 <kingtrade2289@gmail.com>
+Date:   Fri Mar 25 02:48:59 2022 +0300
+
+    Admin ve User için ayrı ayrı form dosyaları oluşturuldu
+
+[33mcommit 0ed7cd111585237e71a18f10bc2b11226ed56899[m
+Author: aslan2289 <kingtrade2289@gmail.com>
+Date:   Thu Mar 24 01:11:23 2022 +0300
+
+    Proje Dosyası Oluşturuldu
+
+[33mcommit 1e3ada454159480d326713a188a425a1fcd61b97[m
+Author: aslan2289 <kingtrade2289@gmail.com>
+Date:   Thu Mar 24 01:06:58 2022 +0300
+
+    Dosyalar Oluşturuldu
+
+[33mcommit d890041be3681ed5eb65f7568e8b31a65c031c5c[m
+Author: aslan2289 <102024004+aslan2289@users.noreply.github.com>
+Date:   Thu Mar 24 00:43:11 2022 +0300
+
+    Initial commit
