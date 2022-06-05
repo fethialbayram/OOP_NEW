@@ -52,70 +52,70 @@ namespace OopLabApp
 
         void BtnRenk()
         {
+           
+                for (int i = 0; i < 3; i++)
+                {
+                A:;
+                    Random random = new Random();
+                    int sayi = random.Next(buttonList.Count);
+
+                    Random random1 = new Random();
+                    int renk = random1.Next(1, 4);
+                    if (vs.Contains("Kırmızı") && renk == 1)
+                    {
+                        buttonList[sayi].BackColor = Color.Red;
+                    }
+                    else if (vs.Contains("Mavi") && renk == 2)
+                    {
+                        buttonList[sayi].BackColor = Color.Blue;
+                    }
+                    else if (vs.Contains("Mor") && renk == 3)
+                    {
+                        buttonList[sayi].BackColor = Color.Purple;
+
+                    }
+                if (renk == 1 && vs.Contains("Kare"))
+                {
+                    buttonList[sayi].Image = Image.FromFile("Kare.png");
+                }
+                else if (renk == 2 && vs.Contains("Daire"))
+                {
+                    buttonList[sayi].Image = Image.FromFile("Daire.png");
+                }
+                else if (renk == 3 && vs.Contains("Üçgen"))
+                {
+                    buttonList[sayi].Image = Image.FromFile("Üçgen.png");
+
+                }
+
+                else goto A;
+                }
+            }
+        void BtnResim()
+        {
+
             for (int i = 0; i < 3; i++)
             {
             A:;
                 Random random = new Random();
                 int sayi = random.Next(buttonList.Count);
-                
+
                 Random random1 = new Random();
-                int renk = random1.Next(1,4);
-                if (vs.Contains("Kırmızı") && renk == 1)
+                int renk = random1.Next(1, 4);
+                if (renk == 1 && vs.Contains("Kare"))
                 {
-                    buttonList[sayi].BackColor = Color.Red;
+                    buttonList[sayi].Image = Image.FromFile("Kare.png");
                 }
-                else if (vs.Contains("Mavi") && renk == 2)
+                else if (renk == 2 && vs.Contains("Daire"))
                 {
-                    buttonList[sayi].BackColor = Color.Blue;
+                    buttonList[sayi].Image = Image.FromFile("Daire.png");
                 }
-                else if (vs.Contains("Mor") && renk == 3)
+                else if (renk == 3 && vs.Contains("Üçgen"))
                 {
-                    buttonList[sayi].BackColor = Color.Purple;
+                    buttonList[sayi].Image = Image.FromFile("Üçgen.png");
 
                 }
                 else goto A;
-            }   
-        }
-        void BtnResim()
-        {
-            foreach (Button button in buttonList)
-            {
-                if (button.Tag == "Kare" && button.BackColor != Color.Blue
-                   && button.BackColor != Color.Black && button.BackColor != Color.Red)
-                {
-                A:;
-                    Random rnd = new Random();
-                    int renk = rnd.Next(3);
-                    if (renk == 0 && blue == "Mavi") button.BackColor = Color.Blue;
-                    else if (renk == 1 && red == "Kırmızı") button.BackColor = Color.Red;
-                    else if (renk == 2 && purple == "Mor") button.BackColor = Color.Black;
-                    else goto A;
-                }
-                else if (button.Tag == "Daire" && button.BackColor != Color.Blue
-                    && button.BackColor != Color.Black && button.BackColor != Color.Red)
-                {
-                B:;
-
-                    Random rnd = new Random();
-                    int renk = rnd.Next(3);
-                    if (renk == 0 && blue == "Mavi") button.BackColor = Color.Blue;
-                    else if (renk == 1 && red == "Kırmızı") button.BackColor = Color.Red;
-                    else if (renk == 2 && purple == "Mor") button.BackColor = Color.Black;
-                    else goto B;
-                }
-                else if (button.Tag == "Üçgen" && button.BackColor != Color.Blue
-                    && button.BackColor != Color.Black && button.BackColor != Color.Red)
-                {
-                C:;
-
-                    Random rnd = new Random();
-                    int renk = rnd.Next(3);
-                    if (renk == 0 && blue == "Mavi") button.BackColor = Color.Blue;
-                    else if (renk == 1 && red == "Kırmızı") button.BackColor = Color.Red;
-                    else if (renk == 2 && purple == "Mor") button.BackColor = Color.Black;
-                    else goto C;
-                }
-
             }
         }
         void ReadSave()
@@ -171,7 +171,7 @@ namespace OopLabApp
             ReadSave();
             ButtonOluştur();
             BtnEkle();
-         //   BtnResim();
+          //  BtnResim();
             BtnRenk();
         }
         private void Oyna_FormClosing(object sender, FormClosingEventArgs e)

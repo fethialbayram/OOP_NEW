@@ -29,9 +29,7 @@ namespace OopLabApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.scoretxt = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // scoretxt
@@ -41,12 +39,6 @@ namespace OopLabApp
             this.scoretxt.Name = "scoretxt";
             this.scoretxt.Size = new System.Drawing.Size(185, 67);
             this.scoretxt.TabIndex = 0;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Oyna
             // 
@@ -66,6 +58,5 @@ namespace OopLabApp
         #endregion
 
         private System.Windows.Forms.TextBox scoretxt;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
