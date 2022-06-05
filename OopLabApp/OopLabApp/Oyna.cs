@@ -14,7 +14,12 @@ namespace OopLabApp
     public partial class Oyna : Form
     {
         int size, x, y;
-        string sq = " ", rd = " ", tr = " ", red = " ", blue = " ", black = " ";
+        string square = " ", round = " ", triangle = " ", red = " ", blue = " ", purple = " ";
+
+        static FileStream  text = new FileStream("./save.txt", FileMode.Open, FileAccess.Read);
+
+        static StreamReader sw = new StreamReader(text);
+        string vs = sw.ReadToEnd();
 
         List<Button> buttonList = new List<Button>();
         public Oyna()
@@ -45,43 +50,69 @@ namespace OopLabApp
             }
         }
 
+        void BtnRenk()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+            A:;
+                Random random = new Random();
+                int sayi = random.Next(buttonList.Count);
+                
+                Random random1 = new Random();
+                int renk = random1.Next(1,4);
+                if (vs.Contains("Kırmızı") && renk == 1)
+                {
+                    buttonList[sayi].BackColor = Color.Red;
+                }
+                else if (vs.Contains("Mavi") && renk == 2)
+                {
+                    buttonList[sayi].BackColor = Color.Blue;
+                }
+                else if (vs.Contains("Mor") && renk == 3)
+                {
+                    buttonList[sayi].BackColor = Color.Purple;
+
+                }
+                else goto A;
+            }   
+        }
         void BtnResim()
         {
             foreach (Button button in buttonList)
             {
-                if (button.Tag == "square" && button.BackColor != Color.Blue
+                if (button.Tag == "Kare" && button.BackColor != Color.Blue
                    && button.BackColor != Color.Black && button.BackColor != Color.Red)
                 {
                 A:;
                     Random rnd = new Random();
                     int renk = rnd.Next(3);
-                    if (renk == 0 && blue == "Blue") button.BackColor = Color.Blue;
-                    else if (renk == 1 && red == "Red") button.BackColor = Color.Red;
-                    else if (renk == 2 && black == "Black") button.BackColor = Color.Black;
+                    if (renk == 0 && blue == "Mavi") button.BackColor = Color.Blue;
+                    else if (renk == 1 && red == "Kırmızı") button.BackColor = Color.Red;
+                    else if (renk == 2 && purple == "Mor") button.BackColor = Color.Black;
                     else goto A;
                 }
-                else if (button.Tag == "round" && button.BackColor != Color.Blue
+                else if (button.Tag == "Daire" && button.BackColor != Color.Blue
                     && button.BackColor != Color.Black && button.BackColor != Color.Red)
                 {
                 B:;
 
                     Random rnd = new Random();
                     int renk = rnd.Next(3);
-                    if (renk == 0 && blue == "Blue") button.BackColor = Color.Blue;
-                    else if (renk == 1 && red == "Red") button.BackColor = Color.Red;
-                    else if (renk == 2 && black == "Black") button.BackColor = Color.Black;
+                    if (renk == 0 && blue == "Mavi") button.BackColor = Color.Blue;
+                    else if (renk == 1 && red == "Kırmızı") button.BackColor = Color.Red;
+                    else if (renk == 2 && purple == "Mor") button.BackColor = Color.Black;
                     else goto B;
                 }
-                else if (button.Tag == "triangle" && button.BackColor != Color.Blue
+                else if (button.Tag == "Üçgen" && button.BackColor != Color.Blue
                     && button.BackColor != Color.Black && button.BackColor != Color.Red)
                 {
                 C:;
 
                     Random rnd = new Random();
                     int renk = rnd.Next(3);
-                    if (renk == 0 && blue == "Blue") button.BackColor = Color.Blue;
-                    else if (renk == 1 && red == "Red") button.BackColor = Color.Red;
-                    else if (renk == 2 && black == "Black") button.BackColor = Color.Black;
+                    if (renk == 0 && blue == "Mavi") button.BackColor = Color.Blue;
+                    else if (renk == 1 && red == "Kırmızı") button.BackColor = Color.Red;
+                    else if (renk == 2 && purple == "Mor") button.BackColor = Color.Black;
                     else goto C;
                 }
 
@@ -89,34 +120,31 @@ namespace OopLabApp
         }
         void ReadSave()
         {
-            FileStream text = new FileStream("./save.txt", FileMode.Open, FileAccess.Read);
-
-            StreamReader sw = new StreamReader(text);
-            string vs = sw.ReadToEnd();
+           
 
             if (vs.Contains("Kırmızı"))
             {
-                red = "Red";
+                red = "Kırmızı";
             }
             if (vs.Contains("Mavi"))
             {
-                blue = "Blue";
+                blue = "Mavi";
             }
-            if (vs.Contains("Siyah"))
+            if (vs.Contains("Mor"))
             {
-                black = "Black";
+                purple = "Mor";
             }
-            if (vs.Contains("Square"))
+            if (vs.Contains("Kare"))
             {
-                sq = "Square";
+                square = "Kare";
             }
-            if (vs.Contains("Triangle"))
+            if (vs.Contains("Üçgen"))
             {
-                tr = "Triangle";
+                triangle = "Üçgen";
             }
-            if (vs.Contains("Round"))
+            if (vs.Contains("Daire"))
             {
-                rd = "Round";
+                round = "Daire";
             }
             if (vs.Contains("kolay"))
             {
@@ -143,7 +171,8 @@ namespace OopLabApp
             ReadSave();
             ButtonOluştur();
             BtnEkle();
-
+         //   BtnResim();
+            BtnRenk();
         }
         private void Oyna_FormClosing(object sender, FormClosingEventArgs e)
         {

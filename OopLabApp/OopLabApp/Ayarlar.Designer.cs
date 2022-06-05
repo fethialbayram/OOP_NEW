@@ -29,13 +29,17 @@ namespace OopLabApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.sarıcheck = new System.Windows.Forms.CheckBox();
+            this.mavicheck = new System.Windows.Forms.CheckBox();
             this.kırmızıcheck = new System.Windows.Forms.CheckBox();
             this.Morcheck = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.Kaydetbtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.CustomCol = new System.Windows.Forms.TextBox();
             this.CustomRow = new System.Windows.Forms.TextBox();
             this.CustomRadio = new System.Windows.Forms.RadioButton();
@@ -50,27 +54,26 @@ namespace OopLabApp
             this.helpbtn = new System.Windows.Forms.Button();
             this.Aboutbtn = new System.Windows.Forms.Button();
             this.oynabtn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Karechk = new System.Windows.Forms.CheckBox();
+            this.Üçgenchk = new System.Windows.Forms.CheckBox();
+            this.Dairechk = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // sarıcheck
+            // mavicheck
             // 
-            this.sarıcheck.AutoSize = true;
-            this.sarıcheck.Location = new System.Drawing.Point(37, 57);
-            this.sarıcheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sarıcheck.Name = "sarıcheck";
-            this.sarıcheck.Size = new System.Drawing.Size(55, 21);
-            this.sarıcheck.TabIndex = 0;
-            this.sarıcheck.Text = "Sarı";
-            this.sarıcheck.UseVisualStyleBackColor = true;
-            this.sarıcheck.CheckedChanged += new System.EventHandler(this.sarıcheck_CheckedChanged);
-            this.sarıcheck.Leave += new System.EventHandler(this.sarıcheck_CheckedChanged);
+            this.mavicheck.AutoSize = true;
+            this.mavicheck.Location = new System.Drawing.Point(37, 57);
+            this.mavicheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mavicheck.Name = "mavicheck";
+            this.mavicheck.Size = new System.Drawing.Size(59, 21);
+            this.mavicheck.TabIndex = 0;
+            this.mavicheck.Text = "Mavi";
+            this.mavicheck.UseVisualStyleBackColor = true;
+            this.mavicheck.CheckedChanged += new System.EventHandler(this.sarıcheck_CheckedChanged);
+            this.mavicheck.Leave += new System.EventHandler(this.sarıcheck_CheckedChanged);
             // 
             // kırmızıcheck
             // 
@@ -99,7 +102,7 @@ namespace OopLabApp
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.sarıcheck);
+            this.panel1.Controls.Add(this.mavicheck);
             this.panel1.Controls.Add(this.kırmızıcheck);
             this.panel1.Controls.Add(this.Morcheck);
             this.panel1.Location = new System.Drawing.Point(59, 33);
@@ -146,6 +149,42 @@ namespace OopLabApp
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(228, 167);
             this.panel2.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(107, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 17);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "5 Puan";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(159, 141);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 17);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "2 Puan";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(107, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "3 Puan";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(107, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "1 Puan";
             // 
             // CustomCol
             // 
@@ -228,6 +267,9 @@ namespace OopLabApp
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Dairechk);
+            this.groupBox1.Controls.Add(this.Üçgenchk);
+            this.groupBox1.Controls.Add(this.Karechk);
             this.groupBox1.Controls.Add(this.Dairebtn);
             this.groupBox1.Controls.Add(this.Üçgenbtn);
             this.groupBox1.Controls.Add(this.Karebtn);
@@ -242,7 +284,7 @@ namespace OopLabApp
             // 
             // Dairebtn
             // 
-            this.Dairebtn.Location = new System.Drawing.Point(37, 91);
+            this.Dairebtn.Location = new System.Drawing.Point(22, 89);
             this.Dairebtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Dairebtn.Name = "Dairebtn";
             this.Dairebtn.Size = new System.Drawing.Size(75, 30);
@@ -252,7 +294,7 @@ namespace OopLabApp
             // 
             // Üçgenbtn
             // 
-            this.Üçgenbtn.Location = new System.Drawing.Point(37, 55);
+            this.Üçgenbtn.Location = new System.Drawing.Point(22, 55);
             this.Üçgenbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Üçgenbtn.Name = "Üçgenbtn";
             this.Üçgenbtn.Size = new System.Drawing.Size(75, 30);
@@ -262,7 +304,7 @@ namespace OopLabApp
             // 
             // Karebtn
             // 
-            this.Karebtn.Location = new System.Drawing.Point(37, 21);
+            this.Karebtn.Location = new System.Drawing.Point(21, 23);
             this.Karebtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Karebtn.Name = "Karebtn";
             this.Karebtn.Size = new System.Drawing.Size(75, 28);
@@ -300,41 +342,39 @@ namespace OopLabApp
             this.oynabtn.UseVisualStyleBackColor = true;
             this.oynabtn.Click += new System.EventHandler(this.oynabtn_Click);
             // 
-            // label3
+            // Karechk
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(107, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "1 Puan";
+            this.Karechk.AutoSize = true;
+            this.Karechk.Location = new System.Drawing.Point(114, 30);
+            this.Karechk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Karechk.Name = "Karechk";
+            this.Karechk.Size = new System.Drawing.Size(60, 21);
+            this.Karechk.TabIndex = 3;
+            this.Karechk.Text = "Kare";
+            this.Karechk.UseVisualStyleBackColor = true;
+            this.Karechk.CheckedChanged += new System.EventHandler(this.Karechk_CheckedChanged);
             // 
-            // label4
+            // Üçgenchk
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(107, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 17);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "3 Puan";
+            this.Üçgenchk.AutoSize = true;
+            this.Üçgenchk.Location = new System.Drawing.Point(114, 61);
+            this.Üçgenchk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Üçgenchk.Name = "Üçgenchk";
+            this.Üçgenchk.Size = new System.Drawing.Size(71, 21);
+            this.Üçgenchk.TabIndex = 4;
+            this.Üçgenchk.Text = "Üçgen";
+            this.Üçgenchk.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // Dairechk
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(159, 141);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 17);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "2 Puan";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(107, 114);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 17);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "5 Puan";
+            this.Dairechk.AutoSize = true;
+            this.Dairechk.Location = new System.Drawing.Point(114, 95);
+            this.Dairechk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Dairechk.Name = "Dairechk";
+            this.Dairechk.Size = new System.Drawing.Size(64, 21);
+            this.Dairechk.TabIndex = 5;
+            this.Dairechk.Text = "Daire";
+            this.Dairechk.UseVisualStyleBackColor = true;
             // 
             // Ayarlar
             // 
@@ -359,13 +399,14 @@ namespace OopLabApp
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.CheckBox sarıcheck;
+        private System.Windows.Forms.CheckBox mavicheck;
         private System.Windows.Forms.CheckBox kırmızıcheck;
         private System.Windows.Forms.CheckBox Morcheck;
         private System.Windows.Forms.Panel panel1;
@@ -390,5 +431,8 @@ namespace OopLabApp
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox Dairechk;
+        private System.Windows.Forms.CheckBox Üçgenchk;
+        private System.Windows.Forms.CheckBox Karechk;
     }
 }

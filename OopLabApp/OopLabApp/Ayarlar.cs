@@ -23,9 +23,9 @@ namespace OopLabApp
         {
             TextWriter textWriter = new StreamWriter("./save.txt");
 
-            if (sarıcheck.Checked == true)
+            if (mavicheck.Checked == true)
             {
-                textWriter.WriteLine("Sarı");
+                textWriter.WriteLine("Mavi");
             }
             if (kırmızıcheck.Checked == true)
             {
@@ -47,6 +47,31 @@ namespace OopLabApp
             {
                 textWriter.WriteLine("zor");
             }
+             if(mavicheck.Checked==true)
+            {
+                textWriter.WriteLine("Mavi");
+            }
+            if (kırmızıcheck.Checked == true)
+            {
+                textWriter.WriteLine("Kırmızı");
+            }
+            if (Morcheck.Checked == true)
+            {
+                textWriter.WriteLine("Mor");
+            }
+            if (Karechk.Checked == true)
+            {
+                textWriter.WriteLine("Kare");
+            }
+            if (Üçgenchk.Checked == true)
+            {
+                textWriter.WriteLine("Üçgen");
+            }
+            if (Dairechk.Checked == true)
+            {
+                textWriter.WriteLine("Daire");
+            }
+
             textWriter.Close();
 
 
@@ -65,7 +90,7 @@ namespace OopLabApp
             }
             if (obj.Contains("Sarı"))
             {
-                sarıcheck.Checked = true;
+                mavicheck.Checked = true;
             }
             if (obj.Contains("Mor"))
             {
@@ -82,6 +107,30 @@ namespace OopLabApp
              if (obj.Contains("zor"))
             {
                 ZorRadio.Checked = true;
+            }
+           if(obj.Contains("Mor"))
+            {
+                Morcheck.Checked = true;
+            }
+            if (obj.Contains("Mavi"))
+            {
+                mavicheck.Checked = true;
+            }
+            if (obj.Contains("Kırmızı"))
+            {
+                kırmızıcheck.Checked = true;
+            }
+            if(obj.Contains("Kare"))
+            {
+                Karechk.Checked = true;
+            }
+            if(obj.Contains("Üçgen"))
+            {
+                Üçgenchk.Checked = true;
+            }
+            if(obj.Contains("Daire"))
+            {
+                Dairechk.Checked = true;
             }
 
             text.Close();
@@ -176,6 +225,11 @@ namespace OopLabApp
         }
 
         private void Kolayradio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Karechk_CheckedChanged(object sender, EventArgs e)
         {
 
         }
