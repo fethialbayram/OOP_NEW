@@ -29,25 +29,25 @@ namespace OopLabApp
         }
         private void Ayarlar_Load(object sender, EventArgs e)
         {
-            FileStream text = new FileStream("./save.txt", FileMode.Open, FileAccess.Read);
+        //    FileStream text = new FileStream("./save.txt", FileMode.Open, FileAccess.Read);
 
-            StreamReader sw = new StreamReader(text);
-            string obj = sw.ReadToEnd();
+        //    StreamReader sw = new StreamReader(text);
+        //    string obj = sw.ReadToEnd();
 
 
-            if (obj.Contains("Kırmızı"))
-            {
-                kırmızıcheck.Checked = true;
-            }
-            if (obj.Contains("Sarı"))
-            {
-                sarıcheck.Checked = true;
-            }
-            if (obj.Contains("Mor"))
-            {
-                Morcheck.Checked = true;
-            }
-            text.Close();
+        //    if (obj.Contains("Kırmızı"))
+        //    {
+        //        kırmızıcheck.Checked = true;
+        //    }
+        //    if (obj.Contains("Sarı"))
+        //    {
+        //        sarıcheck.Checked = true;
+        //    }
+        //    if (obj.Contains("Mor"))
+        //    {
+        //        Morcheck.Checked = true;
+        //    }
+        //    text.Close();
         }
 
         private void sarıcheck_CheckedChanged(object sender, EventArgs e)
