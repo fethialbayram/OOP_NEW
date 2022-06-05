@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="adminManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     <Compile Include="Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
+    <Compile Include="Oyna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Oyna.Designer.cs">
+      <DependentUpon>Oyna.cs</DependentUpon>
+    </Compile>
     <Compile Include="OyunPenceresi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,9 @@
     <Compile Include="Uyeol.Designer.cs">
       <DependentUpon>Uyeol.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adminManage.resx">
       <DependentUpon>adminManage.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Oyna.resx">
+      <DependentUpon>Oyna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OyunPenceresi.resx">
       <DependentUpon>OyunPenceresi.cs</DependentUpon>

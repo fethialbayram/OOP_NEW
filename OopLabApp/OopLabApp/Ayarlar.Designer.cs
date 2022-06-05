@@ -34,7 +34,7 @@ namespace OopLabApp
             this.Morcheck = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.RenkSec = new System.Windows.Forms.Button();
+            this.Kaydetbtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CustomCol = new System.Windows.Forms.TextBox();
             this.CustomRow = new System.Windows.Forms.TextBox();
@@ -48,7 +48,12 @@ namespace OopLabApp
             this.Üçgenbtn = new System.Windows.Forms.Button();
             this.Karebtn = new System.Windows.Forms.Button();
             this.helpbtn = new System.Windows.Forms.Button();
-            this.aboutbtn = new System.Windows.Forms.Button();
+            this.Aboutbtn = new System.Windows.Forms.Button();
+            this.oynabtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -112,19 +117,23 @@ namespace OopLabApp
             this.label1.TabIndex = 3;
             this.label1.Text = "Renk Seçimi";
             // 
-            // RenkSec
+            // Kaydetbtn
             // 
-            this.RenkSec.Location = new System.Drawing.Point(341, 206);
-            this.RenkSec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RenkSec.Name = "RenkSec";
-            this.RenkSec.Size = new System.Drawing.Size(75, 30);
-            this.RenkSec.TabIndex = 4;
-            this.RenkSec.Text = "Kaydet";
-            this.RenkSec.UseVisualStyleBackColor = true;
-            this.RenkSec.Click += new System.EventHandler(this.RenkSec_Click);
+            this.Kaydetbtn.Location = new System.Drawing.Point(341, 198);
+            this.Kaydetbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Kaydetbtn.Name = "Kaydetbtn";
+            this.Kaydetbtn.Size = new System.Drawing.Size(75, 30);
+            this.Kaydetbtn.TabIndex = 4;
+            this.Kaydetbtn.Text = "Kaydet";
+            this.Kaydetbtn.UseVisualStyleBackColor = true;
+            this.Kaydetbtn.Click += new System.EventHandler(this.RenkSec_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.CustomCol);
             this.panel2.Controls.Add(this.CustomRow);
             this.panel2.Controls.Add(this.CustomRadio);
@@ -205,6 +214,7 @@ namespace OopLabApp
             this.Kolayradio.TabStop = true;
             this.Kolayradio.Text = "Kolay";
             this.Kolayradio.UseVisualStyleBackColor = true;
+            this.Kolayradio.CheckedChanged += new System.EventHandler(this.Kolayradio_CheckedChanged);
             // 
             // label2
             // 
@@ -270,14 +280,61 @@ namespace OopLabApp
             this.helpbtn.UseVisualStyleBackColor = true;
             this.helpbtn.Click += new System.EventHandler(this.helpbtn_Click);
             // 
-            // aboutbtn
+            // Aboutbtn
             // 
-            this.aboutbtn.Location = new System.Drawing.Point(341, 241);
-            this.aboutbtn.Name = "aboutbtn";
-            this.aboutbtn.Size = new System.Drawing.Size(75, 30);
-            this.aboutbtn.TabIndex = 8;
-            this.aboutbtn.Text = "Aboutbtn";
-            this.aboutbtn.UseVisualStyleBackColor = true;
+            this.Aboutbtn.Location = new System.Drawing.Point(341, 233);
+            this.Aboutbtn.Name = "Aboutbtn";
+            this.Aboutbtn.Size = new System.Drawing.Size(75, 30);
+            this.Aboutbtn.TabIndex = 8;
+            this.Aboutbtn.Text = "About";
+            this.Aboutbtn.UseVisualStyleBackColor = true;
+            this.Aboutbtn.Click += new System.EventHandler(this.aboutbtn_Click);
+            // 
+            // oynabtn
+            // 
+            this.oynabtn.Location = new System.Drawing.Point(341, 127);
+            this.oynabtn.Name = "oynabtn";
+            this.oynabtn.Size = new System.Drawing.Size(75, 30);
+            this.oynabtn.TabIndex = 9;
+            this.oynabtn.Text = "Oyna";
+            this.oynabtn.UseVisualStyleBackColor = true;
+            this.oynabtn.Click += new System.EventHandler(this.oynabtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(107, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "1 Puan";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(107, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "3 Puan";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(159, 141);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 17);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "2 Puan";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(107, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 17);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "5 Puan";
             // 
             // Ayarlar
             // 
@@ -285,11 +342,12 @@ namespace OopLabApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.aboutbtn);
+            this.Controls.Add(this.oynabtn);
+            this.Controls.Add(this.Aboutbtn);
             this.Controls.Add(this.helpbtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.RenkSec);
+            this.Controls.Add(this.Kaydetbtn);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Ayarlar";
@@ -312,7 +370,7 @@ namespace OopLabApp
         private System.Windows.Forms.CheckBox Morcheck;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button RenkSec;
+        private System.Windows.Forms.Button Kaydetbtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox CustomCol;
@@ -326,6 +384,11 @@ namespace OopLabApp
         private System.Windows.Forms.Button Üçgenbtn;
         private System.Windows.Forms.Button Karebtn;
         private System.Windows.Forms.Button helpbtn;
-        private System.Windows.Forms.Button aboutbtn;
+        private System.Windows.Forms.Button Aboutbtn;
+        private System.Windows.Forms.Button oynabtn;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
