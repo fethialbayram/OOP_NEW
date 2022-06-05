@@ -80,8 +80,9 @@ namespace OopLabApp
             this.Aboutscreenbtn.Name = "Aboutscreenbtn";
             this.Aboutscreenbtn.Size = new System.Drawing.Size(155, 37);
             this.Aboutscreenbtn.TabIndex = 4;
-            this.Aboutscreenbtn.Text = "Aboutscreen";
+            this.Aboutscreenbtn.Text = "About";
             this.Aboutscreenbtn.UseVisualStyleBackColor = true;
+            this.Aboutscreenbtn.Click += new System.EventHandler(this.Aboutscreenbtn_Click);
             // 
             // Help
             // 

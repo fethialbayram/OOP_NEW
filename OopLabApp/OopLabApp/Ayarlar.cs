@@ -19,35 +19,72 @@ namespace OopLabApp
             this.TopMost = false;
         }
 
-       
-
         private void RenkSec_Click(object sender, EventArgs e)
         {
+            TextWriter textWriter = new StreamWriter("./save.txt");
+
+            if (sarıcheck.Checked == true)
+            {
+                textWriter.WriteLine("Sarı");
+            }
+            if (kırmızıcheck.Checked == true)
+            {
+                textWriter.WriteLine("Kırmızı");
+            }
+            if (Morcheck.Checked == true)
+            {
+                textWriter.WriteLine("Mor");
+            }
+             if (Kolayradio.Checked==true)
+            {
+                textWriter.WriteLine("kolay");
+            }
+             if(Ortaradio.Checked==true)
+            {
+                textWriter.WriteLine("orta");
+            }
+             if(ZorRadio.Checked==true)
+            {
+                textWriter.WriteLine("zor");
+            }
+            textWriter.Close();
 
 
-        
         }
         private void Ayarlar_Load(object sender, EventArgs e)
         {
-        //    FileStream text = new FileStream("./save.txt", FileMode.Open, FileAccess.Read);
+            FileStream text = new FileStream("./save.txt", FileMode.Open, FileAccess.Read);
 
-        //    StreamReader sw = new StreamReader(text);
-        //    string obj = sw.ReadToEnd();
+            StreamReader sw = new StreamReader(text);
+            string obj = sw.ReadToEnd();
 
 
-        //    if (obj.Contains("Kırmızı"))
-        //    {
-        //        kırmızıcheck.Checked = true;
-        //    }
-        //    if (obj.Contains("Sarı"))
-        //    {
-        //        sarıcheck.Checked = true;
-        //    }
-        //    if (obj.Contains("Mor"))
-        //    {
-        //        Morcheck.Checked = true;
-        //    }
-        //    text.Close();
+            if (obj.Contains("Kırmızı"))
+            {
+                kırmızıcheck.Checked = true;
+            }
+            if (obj.Contains("Sarı"))
+            {
+                sarıcheck.Checked = true;
+            }
+            if (obj.Contains("Mor"))
+            {
+                Morcheck.Checked = true;
+            }
+             if(obj.Contains("kolay"))
+            {
+                Kolayradio.Checked = true;
+            }
+             if (obj.Contains("orta"))
+            {
+                Ortaradio.Checked = true;
+            }
+             if (obj.Contains("zor"))
+            {
+                ZorRadio.Checked = true;
+            }
+
+            text.Close();
         }
 
         private void sarıcheck_CheckedChanged(object sender, EventArgs e)
@@ -122,6 +159,25 @@ namespace OopLabApp
             Help helpscreen = new Help();
             helpscreen.Show();
             this.Hide();
+        }
+
+        private void aboutbtn_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
+            this.Hide();
+        }
+
+        private void oynabtn_Click(object sender, EventArgs e)
+        {
+            Oyna oyna = new Oyna();
+            oyna.Show();
+            this.Hide();
+        }
+
+        private void Kolayradio_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

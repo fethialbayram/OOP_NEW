@@ -15,12 +15,20 @@ namespace OopLabApp
         public Help()
         {
             InitializeComponent();
-            this.TopMost = true;
+            this.TopMost = false;
         }
 
         private void Help_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Aboutscreenbtn_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
+            this.Hide();
+            
         }
     }
 }
